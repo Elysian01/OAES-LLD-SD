@@ -20,8 +20,16 @@ public class AssessmentDrive {
     Date startDate, endDate;
     List<SessionManager> sessionManagerList;
 
+    public void addSessionManager(SessionManager sessionManager) {
+        sessionManagerList.add(sessionManager);
+    }
+
     private AssessmentDrive() {
         sessionManagerList = new ArrayList<>();
+    }
+
+    public void deleteSession(SessionManager sessionManager) {
+        sessionManagerList.remove(sessionManager);
     }
 
     public static AssessmentDrive getInstance() {
@@ -29,13 +37,6 @@ public class AssessmentDrive {
             assessmentDrive = new AssessmentDrive();
         }
         return assessmentDrive;
-    }
-
-    public SessionManager createSession(int sessionId) {
-        SessionManager sessionManager = new SessionManager(sessionId);
-        sessionManagerList.add(sessionManager);
-        System.out.println("Session Created with ID: " + sessionId);
-        return sessionManager;
     }
     public AssessmentInboundPack generateInBoundPack(SessionManager sessionManager) {
         AssessmentInboundPack assessmentInboundPack = null;
@@ -54,4 +55,5 @@ public class AssessmentDrive {
         System.out.println("Complete Assessment Result Computed");
         return assessmentDriveResult;
     }
+
 }
