@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" version="24.7.16">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.16">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="516" dy="893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="994" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -128,18 +128,18 @@
           <mxGeometry y="90" width="240" height="8" as="geometry" />
         </mxCell>
         <mxCell id="ApNNItKLbs0jGxivWljB-33" value="Session Manager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="990" y="360" width="400" height="270" as="geometry">
+          <mxGeometry x="990" y="360" width="400" height="280" as="geometry">
             <mxRectangle x="340" y="380" width="170" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ApNNItKLbs0jGxivWljB-34" value="Session id&#xa;Start Time&#xa;End Time&#xa;Location&#xa;AssessmentInBoundPack&#xa;AssessmentOutBoundPack" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;fontStyle=1" parent="ApNNItKLbs0jGxivWljB-33" vertex="1">
-          <mxGeometry y="26" width="400" height="114" as="geometry" />
+        <mxCell id="ApNNItKLbs0jGxivWljB-34" value="Session id&#xa;Start Time&#xa;End Time&#xa;Location&#xa;List&lt;HallTicket&gt;&#xa;AssessmentInBoundPack&#xa;AssessmentOutBoundPack" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;fontStyle=1" parent="ApNNItKLbs0jGxivWljB-33" vertex="1">
+          <mxGeometry y="26" width="400" height="124" as="geometry" />
         </mxCell>
         <mxCell id="ApNNItKLbs0jGxivWljB-35" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontSize=14;fontStyle=1" parent="ApNNItKLbs0jGxivWljB-33" vertex="1">
-          <mxGeometry y="140" width="400" height="8" as="geometry" />
+          <mxGeometry y="150" width="400" height="8" as="geometry" />
         </mxCell>
         <mxCell id="0nIUdYT71gdczuU5gubf-39" value="setAssessmentOutBoundPack()&#xa;setAssessmentInboundPack()&#xa;addHallTicket(HallTicket hallTicket)&#xa;deleteHallTicket(HallTicket hallTicket)&#xa;updateHallTicketCandidateName(hall Ticket, String name)&#xa;getHallTicketList()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;fontStyle=1" parent="ApNNItKLbs0jGxivWljB-33" vertex="1">
-          <mxGeometry y="148" width="400" height="122" as="geometry" />
+          <mxGeometry y="158" width="400" height="122" as="geometry" />
         </mxCell>
         <mxCell id="ApNNItKLbs0jGxivWljB-37" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=14;fontStyle=1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ApNNItKLbs0jGxivWljB-7" target="ApNNItKLbs0jGxivWljB-4" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
