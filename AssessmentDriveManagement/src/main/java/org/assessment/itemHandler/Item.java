@@ -8,10 +8,15 @@ public abstract class Item {
     int itemId;
     String question;
     String topic;
-
     DifficultyLevel difficultyLevel;
-
     QuestionType questionType;
 
-    ItemStatus status;
+    public Item(String question, String topic, DifficultyLevel difficultyLevel, QuestionType questionType) {
+        this.question = question;
+        this.topic = topic;
+        this.difficultyLevel = difficultyLevel;
+        this.questionType = questionType;
+    }
+
+    public Item() {}
 }
