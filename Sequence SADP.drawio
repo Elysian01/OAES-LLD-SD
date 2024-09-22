@@ -68,10 +68,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-8" value=":AssessmentDriveFacade" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="250" y="20" width="150" height="490" as="geometry" />
+          <mxGeometry x="200" y="20" width="150" height="550" as="geometry" />
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-9" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Au_1qcIB4LcXMh-6dsSr-8">
-          <mxGeometry x="70" y="70" width="10" height="320" as="geometry" />
+          <mxGeometry x="70" y="70" width="10" height="450" as="geometry" />
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-15" value="new()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
@@ -140,10 +140,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-29" value=":AssignmentDrive" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="440" y="20" width="150" height="470" as="geometry" />
+          <mxGeometry x="440" y="20" width="150" height="590" as="geometry" />
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-30" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Au_1qcIB4LcXMh-6dsSr-29">
-          <mxGeometry x="70" y="70" width="10" height="310" as="geometry" />
+          <mxGeometry x="70" y="70" width="10" height="400" as="geometry" />
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-31" value="new()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="Au_1qcIB4LcXMh-6dsSr-9" target="Au_1qcIB4LcXMh-6dsSr-30">
           <mxGeometry relative="1" as="geometry">
@@ -156,8 +156,8 @@
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-32" value="&lt;span style=&quot;font-size: 12px; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;assignmentDrive&lt;/span&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" source="Au_1qcIB4LcXMh-6dsSr-30">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="840" y="240" as="sourcePoint" />
-            <mxPoint x="330" y="240" as="targetPoint" />
+            <mxPoint x="510" y="240" as="sourcePoint" />
+            <mxPoint x="280" y="240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-33" value="addSesssion(session)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="Au_1qcIB4LcXMh-6dsSr-9" target="Au_1qcIB4LcXMh-6dsSr-30">
@@ -172,18 +172,45 @@
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-34" value="generateInBoundPack(session)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="Au_1qcIB4LcXMh-6dsSr-9" target="Au_1qcIB4LcXMh-6dsSr-30">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="330" y="340" as="sourcePoint" />
+            <mxPoint x="330" y="350" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="470" y="340" />
+              <mxPoint x="470" y="350" />
             </Array>
-            <mxPoint x="510" y="340" as="targetPoint" />
+            <mxPoint x="510" y="350" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Au_1qcIB4LcXMh-6dsSr-35" value="&lt;span style=&quot;font-size: 12px; text-wrap: wrap;&quot;&gt;assessmentInboundPack&lt;/span&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="510" y="367" as="sourcePoint" />
-            <mxPoint x="330" y="367" as="targetPoint" />
+            <mxPoint x="510" y="370" as="sourcePoint" />
+            <mxPoint x="280" y="370" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Au_1qcIB4LcXMh-6dsSr-39" value="startAssessmentManager(session)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="Au_1qcIB4LcXMh-6dsSr-9" target="Au_1qcIB4LcXMh-6dsSr-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="393" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="472" y="393" />
+            </Array>
+            <mxPoint x="510" y="393" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Au_1qcIB4LcXMh-6dsSr-40" value="&lt;span style=&quot;font-size: 12px; text-wrap: wrap;&quot;&gt;assessmentOutboundPack&lt;/span&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="Au_1qcIB4LcXMh-6dsSr-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="425" as="sourcePoint" />
+            <mxPoint x="330" y="425" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Au_1qcIB4LcXMh-6dsSr-43" value="&lt;span style=&quot;font-size: 12px; text-align: left; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;evaluateAllSessions(List&amp;lt;&lt;/span&gt;&lt;span style=&quot;font-size: 12px; text-wrap: wrap;&quot;&gt;assessmentOutboundPack&lt;/span&gt;&lt;span style=&quot;font-size: 12px; text-align: left; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;&amp;gt;)&lt;/span&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="Au_1qcIB4LcXMh-6dsSr-9" target="Au_1qcIB4LcXMh-6dsSr-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="450" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="472" y="450" />
+            </Array>
+            <mxPoint x="510" y="450" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
