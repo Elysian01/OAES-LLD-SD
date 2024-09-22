@@ -1,4 +1,4 @@
-package org.example;
+package org.assessment.common;
 
 public enum ItemStatus {
     ANSWERED,

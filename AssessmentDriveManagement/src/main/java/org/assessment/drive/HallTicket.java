@@ -1,4 +1,4 @@
-package org.example;
+package org.assessment.drive;
 
 
 public class HallTicket {

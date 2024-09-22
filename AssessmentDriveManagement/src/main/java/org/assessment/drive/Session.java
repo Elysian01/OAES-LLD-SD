@@ -1,4 +1,4 @@
-package org.example;
+package org.assessment.drive;
 
 import java.time.LocalDateTime;
 import java.util.List;
