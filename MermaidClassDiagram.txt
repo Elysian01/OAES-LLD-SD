@@ -1,0 +1,185 @@
+---
+title: Assessment System Class Diagram with Facade and Handlers
+---
+classDiagram
+    %% Drive class
+    class AssessmentDrive {
+        +int driveId
+        +String driveName
+        +List~Session~ sessions
+        +List~HallTicket~ hallTickets
+        +Date startDate
+        +Date endDate
+    }
+
+    %% Session class
+    class Session {
+        +int driveId
+        +Date startTime
+        +Date endTime
+        +String subject
+        +String center
+        +updateSession(sessionId)
+        +getSession(sessionId)
+        +AssessmentInboundPack aip
+        +AssessmentOutboundPack aop
+    }
+
+    class HallTicket {
+        +int HT_id
+        +String name
+        +int session_id
+        +String rollNo
+        +String seatNo
+        +updateHT(HT_id)
+        +getHT(HT_id)
+        +deleteHT(HT_id)
+    }
+
+    %% Corrected relationships
+    %% Aggregation: Session belongs to AssessmentDrive (1-to-many relationship)
+    AssessmentDrive o-- "*" Session: contains
+
+    %% Aggregation: HallTickets are related to Sessions (1-to-many relationship)
+    Session o-- "*" HallTicket: generates
+
+    %% Composition: Session requires AssessmentInboundPack and AssessmentOutboundPack for exam lifecycle (1-to-1 relationship)
+    Session *-- AssessmentInboundPack: has
+    Session *-- AssessmentOutboundPack: has
+
+    %% Aggregation: AssessmentOutboundPack contains HallTickets (1-to-many relationship)
+    AssessmentOutboundPack o-- "*" HallTicket : contains
+
+    %% Association: Session uses AssessmentInstrument (1-to-1 relationship)
+    %% Session --> AssessmentInstrument : uses
+    %% AssessmentOutboundPack --> AssessmentInstrument : uses
+    AssessmentInstrumemtManager --> AssessmentInstrument : manages
+
+    %% DriveManager class
+    class DriveManager {
+        +getInstance()$
+        +updateDrive(driveId)
+        +getDrive(driveId)
+        +deleteDrive(driveId)
+    }
+    DriveManager --> AssessmentDrive : manages
+
+    %% Assessment Drive Session Manager
+    class AssessmentDriveSessionManager {
+        +getInstance()$
+        +addSession(driveId, Session)
+        +generateAndAddHT(driveId, sessionId, HallTicket)
+        +deleteSession(driveId, sessionId)
+        +getAllSessions(driveId)
+        +generateAIPForAllSessions(driveId)
+        +startAssessmentForAllSessions(driveId)
+        +getResultForAllSessions(driveId)
+        
+    }
+    AssessmentDriveSessionManager --> Session : manages
+
+    %% Assessment Instrument Manager
+    class AssessmentInstrumemtManager {
+        +generateAssessmentInstrument(sessionId)
+    }
+
+    %% Assessment Pack Manager
+    class AssessmentManagement {
+        +generateOutboundPack(Session)
+        +collectResponses(AssessmentOutboundPack)
+    }
+    AssessmentInstrumemtManager --> AssessmentInboundPack
+
+    %% Assessment Result Manager
+    class AssessmentResultManager {
+        +evaluateOutboundPack(AssessmentOutboundPack)
+    }
+
+    %% AssessmentDriveFacade class
+    class AssessmentDriveFacade {
+        +getInstance()$
+        +createDrive(name, startDate, endDate) : Status MetaData of Drive
+        +addSession(driveId, startTime, endTime, subject, center)
+        +getAllSessions(driveId) : List~Session~
+        +addHT(sessionId, name, rollNo, seatNo)
+        +generateAIPForAllSessions(driveId)
+        +startAssessmentForAllSessions(driveId)
+        +getResultForAllSessions(driveId)  
+    }
+
+
+    AssessmentDriveFacade --> AssessmentDrive : interacts
+    AssessmentDriveFacade --> Session : interacts
+    AssessmentDriveFacade --> HallTicket : interacts
+    AssessmentDriveFacade --> AssessmentInboundPack : generates
+    AssessmentDriveFacade --> AssessmentResultManager : evaluates
+    AssessmentDriveFacade --> AssessmentDriveSessionManager : manages
+
+    %% Assessment Instrument
+    class AssessmentInstrument {
+        +int sessionId
+        +generateInstrument()
+    }
+
+    %% Assessment Inbound Pack
+    class AssessmentInboundPack {
+        +int sessionId
+        +List~HallTicket~ hallTickets
+        +AssessmentInstrument assessmentInstrument
+    }
+
+    %% Updated connections for Inbound Pack
+    AssessmentInboundPack --> Session : for
+    AssessmentInboundPack o-- "*" HallTicket : includes
+    AssessmentInboundPack --> AssessmentInstrument : uses
+
+    %% Assessment Handler Base Class
+    class AssessmentHandler {
+        -AssessmentHandler nextHandler
+        +setNextHandler(AssessmentHandler handler)
+        +handle(AssessmentDrive drive)
+    }
+
+    %% Handlers
+    class CreateDriveHandler {
+        +handle()
+    }
+    CreateDriveHandler --> AssessmentDrive : interacts
+
+    class CreateSessionHandler {
+        +handle(AssessmentDrive drive)
+    }
+    CreateSessionHandler --> AssessmentDrive : interacts
+
+    class AddHallTicketHandler {
+        +handle(AssessmentDrive drive)
+    }
+    AddHallTicketHandler --> AssessmentDrive : interacts
+
+    class GenerateInboundPackHandler {
+        +handle(AssessmentDrive drive)
+    }
+    GenerateInboundPackHandler --> AssessmentDriveSessionManager : interacts
+
+    class ProcessOutboundPackHandler {
+        +handle(AssessmentDrive drive)
+    }
+    ProcessOutboundPackHandler --> AssessmentResultManager : interacts
+
+    %% Handlers Inheritance and Chain of Responsibility
+    AssessmentHandler <|-- CreateDriveHandler
+    AssessmentHandler <|-- CreateSessionHandler
+    AssessmentHandler <|-- AddHallTicketHandler
+    AssessmentHandler <|-- GenerateInboundPackHandler
+    AssessmentHandler <|-- ProcessOutboundPackHandler
+
+    %% Chain of Responsibility: Handlers link to next
+    %% AssessmentHandler --> AssessmentHandler : nextHandler
+
+    %% Relationship between AssessmentHandler and AssessmentDrive
+    AssessmentHandler --> AssessmentDrive : processes
+
+    %% Relationships
+    AssessmentDriveFacade --> DriveManager : facadeHandles
+    AssessmentManagement --> Session : manages
+    AssessmentDriveFacade --> AssessmentResultManager : facadeHandles
